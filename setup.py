@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="mfa_ua",
-    version="0.1.0",
+    version="0.1.1",
     author="Nils Dittrich",
     author_email="nils.dittrich@ntnu.no",
     description="Uncertainty analysis tools for MFA",
