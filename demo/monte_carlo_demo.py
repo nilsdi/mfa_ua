@@ -20,6 +20,6 @@ if __name__ == "__main__":
         return [result1, result2], ["result1", "result2"]
 
     monte_carlo = MonteCarlo(some_function, sampler)
-    monte_carlo.analyze(iterations=10**7, visualisations=False, show_progress_bar=True)
+    monte_carlo.analyze(iterations=10**6, visualisations=True, show_progress_bar=True)
     monte_carlo.analyze(iterations=10**3, visualisations=True, show_progress_bar=True)
 # %%
