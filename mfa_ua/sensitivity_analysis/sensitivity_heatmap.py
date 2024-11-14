@@ -7,6 +7,9 @@ from matplotlib.colors import Normalize
 def plot_sensitivity_heatmap(
     sensitvities: dict[str, dict[sy.Symbol, dict[str, float]]],
     figsize: tuple = None,
+    cmap: str = "seismic",
+    cmap_min: float = -1,
+    cmap_max: float = 1,
 ) -> tuple[plt.figure, plt.Axes]:
     """
     Create a heatmap of the relative sensitivities of the model to the parameters.
@@ -32,7 +35,7 @@ def plot_sensitivity_heatmap(
             ]
 
     fig, ax = plt.subplots(figsize=figsize)
-    plt.imshow(relative_sensitivity_matrix, cmap="seismic", vmin=-1, vmax=1)
+    plt.imshow(relative_sensitivity_matrix, cmap=cmap, vmin=cmap_min, vmax=cmap_max)
     ax.set_xticks(np.arange(len(parameters)))
     ax.set_xticklabels(parameter_names, rotation=75)
     ax.set_yticks(np.arange(len(flow_names)))
